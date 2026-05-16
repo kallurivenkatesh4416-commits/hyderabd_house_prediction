@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 150" role="img" aria-label="Hyderabad map and homes">
+  <defs>
+    <linearGradient id="homeFill" x1="50" x2="310" y1="22" y2="132" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B8F86"/>
+      <stop offset="1" stop-color="#C86F2E"/>
+    </linearGradient>
+  </defs>
+  <path d="M20 92C55 55 85 68 112 44c21-19 48-31 75-18 30 14 44 54 77 57 27 3 54-14 76 7" fill="none" stroke="#C9D7D4" stroke-width="10" stroke-linecap="round"/>
+  <path d="M34 113c31-16 63-16 96 0 33 16 67 16 103 0 32-15 62-15 93 0" fill="none" stroke="#DDE6E4" stroke-width="12" stroke-linecap="round"/>
+  <g fill="#fff" stroke="#0D4F4B" stroke-width="3" stroke-linejoin="round">
+    <path d="M87 82h58v45H87z"/>
+    <path d="m77 85 39-34 39 34z" fill="url(#homeFill)" stroke="#0D4F4B"/>
+    <path d="M108 100h16v27h-16z" fill="#EAF4F2"/>
+    <path d="M246 64h46v63h-46z"/>
+    <path d="M236 68 269 38l33 30z" fill="url(#homeFill)" stroke="#0D4F4B"/>
+    <path d="M262 92h15v35h-15z" fill="#EAF4F2"/>
+  </g>
+  <g fill="#A74461">
+    <circle cx="53" cy="63" r="8"/>
+    <circle cx="316" cy="51" r="8"/>
+    <circle cx="192" cy="101" r="8"/>
+  </g>
+  <g fill="#0D4F4B" opacity=".25">
+    <circle cx="53" cy="63" r="17"/>
+    <circle cx="316" cy="51" r="17"/>
+    <circle cx="192" cy="101" r="17"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+ipynb
+jupyter
+numpy
+pandas
+kagglehub
+scikit-learn
+matplotlib
