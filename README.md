@@ -14,6 +14,20 @@ Then open:
 http://127.0.0.1:8000
 ```
 
+## Deploy on Render
+
+1. Push this repository to GitHub.
+2. In Render, create a new Web Service from the GitHub repository.
+3. Use these settings:
+
+```text
+Runtime: Python
+Build Command: pip install -r requirements.txt
+Start Command: python app.py
+```
+
+Render provides the `PORT` environment variable automatically. The app binds to `0.0.0.0`, which is required for public web services.
+
 ## Model inputs
 
 - Location
