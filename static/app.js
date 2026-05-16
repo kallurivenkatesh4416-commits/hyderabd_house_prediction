@@ -9,6 +9,7 @@ const controls = {
 
 const elements = {
   datasetLine: document.querySelector("#datasetLine"),
+  modelLabel: document.querySelector("#modelLabel"),
   priceResult: document.querySelector("#priceResult"),
   priceSubline: document.querySelector("#priceSubline"),
   areaMetric: document.querySelector("#areaMetric"),
@@ -60,6 +61,7 @@ function syncPlotBhk() {
 function renderDatasetStats() {
   const rows = formatNumber(options.dataset.rows);
   const locations = formatNumber(options.dataset.locations);
+  elements.modelLabel.textContent = options.model?.label || "Model";
   elements.datasetLine.textContent = `${rows} records · ${locations} locations`;
   elements.medianPrice.textContent = formatLakh(options.dataset.median_price_lakh);
   elements.medianArea.textContent = `${formatNumber(options.dataset.median_area)} sqft`;

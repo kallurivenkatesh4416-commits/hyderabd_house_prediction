@@ -84,6 +84,36 @@ def detect_prediction_scale():
 PREDICTION_SCALE = detect_prediction_scale()
 
 
+def model_display_name():
+    estimator = MODEL
+
+    if hasattr(estimator, "regressor_"):
+        estimator = estimator.regressor_
+    elif hasattr(estimator, "regressor"):
+        estimator = estimator.regressor
+
+    if hasattr(estimator, "steps") and estimator.steps:
+        estimator = estimator.steps[-1][1]
+
+    class_name = type(estimator).__name__
+    labels = {
+        "XGBRegressor": "XGBoost model",
+        "RandomForestRegressor": "Random Forest model",
+        "ExtraTreesRegressor": "Extra Trees model",
+        "GradientBoostingRegressor": "Gradient Boosting model",
+        "LinearRegression": "Linear Regression model",
+        "Ridge": "Ridge model",
+        "Lasso": "Lasso model",
+        "DecisionTreeRegressor": "Decision Tree model",
+        "KNeighborsRegressor": "KNN model",
+        "SVR": "SVR model",
+    }
+    return labels.get(class_name, f"{class_name} model")
+
+
+MODEL_LABEL = model_display_name()
+
+
 def inverse_prediction(value):
     if PREDICTION_SCALE == "log_lakh":
         return math.exp(float(value))
@@ -160,6 +190,10 @@ def options_payload():
 
     return {
         "features": FEATURE_COLUMNS,
+        "model": {
+            "label": MODEL_LABEL,
+            "prediction_scale": PREDICTION_SCALE,
+        },
         "prediction_scale": PREDICTION_SCALE,
         "locations": sorted_values("location"),
         "building_statuses": sorted_values("building_status"),
